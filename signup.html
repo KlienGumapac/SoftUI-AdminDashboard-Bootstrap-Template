@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soft UI Admin Dashboard - Sign Up</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="assets/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="signup-page">
+    <div class="container-fluid">
+        <div class="row min-vh-100">
+            <!-- Left Side - Background -->
+            <div class="col-lg-6 d-none d-lg-block signup-bg">
+                <div class="overlay"></div>
+                <div class="content">
+                    <h1 class="text-white display-4 fw-bold mb-4">Join Soft UI</h1>
+                    <p class="text-white-50 lead">Create your account and start managing your business with our powerful dashboard</p>
+                    <div class="features mt-5">
+                        <div class="feature-item">
+                            <i class="fas fa-rocket text-info"></i>
+                            <span class="text-white">Quick Setup</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-users text-success"></i>
+                            <span class="text-white">Team Collaboration</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-cog text-warning"></i>
+                            <span class="text-white">Easy Customization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side - Sign Up Form -->
+            <div class="col-lg-6 col-md-12 d-flex align-items-center justify-content-center">
+                <div class="signup-form-container">
+                    <div class="text-center mb-3">
+                        <div class="logo mb-2">
+                            <i class="fas fa-cube text-primary" style="font-size: 2.5rem;"></i>
+                        </div>
+                        <h2 class="fw-bold text-dark">Create Account</h2>
+                        <p class="text-muted small">Join thousands of users managing their business</p>
+                    </div>
+                    
+                    <form class="signup-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group mb-2">
+                                    <label for="firstName" class="form-label text-muted small fw-medium">First Name</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0">
+                                            <i class="fas fa-user text-muted"></i>
+                                        </span>
+                                        <input type="text" class="form-control border-start-0" id="firstName" placeholder="First name" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mb-2">
+                                    <label for="lastName" class="form-label text-muted small fw-medium">Last Name</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0">
+                                            <i class="fas fa-user text-muted"></i>
+                                        </span>
+                                        <input type="text" class="form-control border-start-0" id="lastName" placeholder="Last name" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mb-2">
+                            <label for="email" class="form-label text-muted small fw-medium">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0">
+                                    <i class="fas fa-envelope text-muted"></i>
+                                </span>
+                                <input type="email" class="form-control border-start-0" id="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mb-2">
+                            <label for="password" class="form-label text-muted small fw-medium">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0">
+                                    <i class="fas fa-lock text-muted"></i>
+                                </span>
+                                <input type="password" class="form-control border-start-0" id="password" placeholder="Create a password" required>
+                                <button class="btn btn-outline-secondary border-start-0" type="button" id="togglePassword">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mb-2">
+                            <label for="confirmPassword" class="form-label text-muted small fw-medium">Confirm Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0">
+                                    <i class="fas fa-lock text-muted"></i>
+                                </span>
+                                <input type="password" class="form-control border-start-0" id="confirmPassword" placeholder="Confirm your password" required>
+                                <button class="btn btn-outline-secondary border-start-0" type="button" id="toggleConfirmPassword">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                <label class="form-check-label text-muted small" for="agreeTerms">
+                                    I agree to the <a href="#" class="text-primary text-decoration-none">Terms of Service</a> and <a href="#" class="text-primary text-decoration-none">Privacy Policy</a>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-100 py-2 mb-3" onclick="window.location.href='dashboard.html'; return false;">
+                            <i class="fas fa-user-plus me-2"></i>Create Account
+                        </button>
+                        
+                        <div class="text-center">
+                            <p class="text-muted small mb-0">Already have an account? 
+                                <a href="index.html" class="text-primary text-decoration-none fw-medium">Sign in</a>
+                            </p>
+                        </div>
+                    </form>
+                    
+                    <div class="divider my-3">
+                        <span class="text-muted small">Or sign up with</span>
+                    </div>
+                    
+                    <div class="social-signup">
+                        <button class="btn btn-outline-secondary w-100 mb-2">
+                            <i class="fab fa-google me-2"></i>Continue with Google
+                        </button>
+                        <button class="btn btn-outline-secondary w-100">
+                            <i class="fab fa-github me-2"></i>Continue with GitHub
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html> 
