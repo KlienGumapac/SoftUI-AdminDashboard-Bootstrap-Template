@@ -1,7 +1,7 @@
 // Soft UI Admin Dashboard - Custom JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Password toggle functionality
+
     const togglePassword = document.getElementById('togglePassword');
     const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
     const passwordInput = document.getElementById('password');

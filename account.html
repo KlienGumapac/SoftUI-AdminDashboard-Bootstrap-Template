@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Account - Soft UI Admin Dashboard</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="assets/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <i class="fas fa-chart-line"></i>
+                <span class="logo-text">Soft UI</span>
+            </div>
+            <div class="mobile-close d-lg-none">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        
+        <div class="sidebar-menu">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="account.html" class="nav-link active">
+                        <i class="fas fa-user"></i>
+                        <span>Your Account</span>
+                        <i class="fas fa-chevron-right ms-auto"></i>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-category">
+                <h6>MODULES</h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a href="analytics.html" class="nav-link">
+                            <i class="fas fa-truck"></i>
+                            <span>Analytics</span>
+                            <i class="fas fa-chevron-right ms-auto"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="users.html" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Users</span>
+                            <i class="fas fa-chevron-right ms-auto"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.html" class="nav-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                            <i class="fas fa-chevron-right ms-auto"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Reports</span>
+                            <i class="fas fa-chevron-right ms-auto"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-bell"></i>
+                            <span>Notifications</span>
+                            <i class="fas fa-chevron-right ms-auto"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Logout Section -->
+            <div class="sidebar-logout">
+                <a href="index.html" class="nav-link logout-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+            <div class="container-fluid">
+                <div class="navbar-nav me-auto">
+                    <div class="nav-item d-lg-none">
+                        <button class="btn btn-link mobile-sidebar-toggle" type="button">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <div class="nav-item">
+                        <div class="search-container">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search here..." class="search-input">
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <div class="mode-toggle">
+                            <i class="fas fa-sun"></i>
+                            <div class="toggle-switch active"></div>
+                            <i class="fas fa-moon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <div class="notification-bell">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">1</span>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <div class="message-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <div class="user-profile">
+                            <div class="user-info">
+                                <span class="user-name">Alex Santos</span>
+                                <span class="user-status">Online</span>
+                            </div>
+                            <div class="user-avatar">
+                                <div class="avatar-placeholder">AJ</div>
+                            </div>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Account Content -->
+        <div class="container-fluid py-3">
+            <!-- Page Header -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="page-header">
+                        <h1 class="page-title">
+                            <i class="fas fa-user-circle me-3"></i>
+                            Your Account
+                        </h1>
+                        <p class="page-subtitle">Manage your profile, security settings, and preferences</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Account Sections -->
+            <div class="row">
+                <!-- Profile Information -->
+                <div class="col-lg-8 mb-4">
+                    <div class="account-card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-user me-2"></i>Profile Information</h5>
+                            <button class="btn btn-sm btn-primary">
+                                <i class="fas fa-edit me-1"></i>Edit
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="form-control" value="Alex" readonly>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" value="Santos" readonly>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" value="alex.santos@example.com" readonly>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" value="+63 912 345 6789" readonly>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Location</label>
+                                    <input type="text" class="form-control" value="Makati, Metro Manila" readonly>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label class="form-label">Bio</label>
+                                    <textarea class="form-control" rows="3" readonly>Senior Administrator with 5+ years of experience in system management and user administration. Based in Metro Manila, Philippines.</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Profile Picture -->
+                <div class="col-lg-4 mb-4">
+                    <div class="account-card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-camera me-2"></i>Profile Picture</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="profile-picture-container mb-3">
+                                                            <div class="profile-picture">
+                                <div class="avatar-placeholder-large">AS</div>
+                                <div class="profile-picture-overlay">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                            </div>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm me-2">
+                                <i class="fas fa-upload me-1"></i>Upload New
+                            </button>
+                            <button class="btn btn-outline-danger btn-sm">
+                                <i class="fas fa-trash me-1"></i>Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- Security Settings -->
+                <div class="col-lg-6 mb-4">
+                    <div class="account-card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-shield-alt me-2"></i>Security Settings</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="security-item mb-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-1">Two-Factor Authentication</h6>
+                                        <small class="text-muted">Add an extra layer of security</small>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="twoFactorAuth">
+                                        <label class="form-check-label" for="twoFactorAuth"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="security-item mb-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-1">Login Notifications</h6>
+                                        <small class="text-muted">Get notified of new logins</small>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="loginNotifications" checked>
+                                        <label class="form-check-label" for="loginNotifications"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="security-item mb-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-1">Session Timeout</h6>
+                                        <small class="text-muted">Auto-logout after inactivity</small>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="sessionTimeout" checked>
+                                        <label class="form-check-label" for="sessionTimeout"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-warning btn-sm w-100">
+                                <i class="fas fa-key me-1"></i>Change Password
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Preferences -->
+                <div class="col-lg-6 mb-4">
+                    <div class="account-card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-cog me-2"></i>Preferences</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="preference-item mb-3">
+                                <label class="form-label">Theme</label>
+                                <select class="form-select">
+                                    <option value="light">Light Theme</option>
+                                    <option value="dark">Dark Theme</option>
+                                    <option value="auto">Auto (System)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="preference-item mb-3">
+                                <label class="form-label">Language</label>
+                                <select class="form-select">
+                                    <option value="en">English</option>
+                                    <option value="tl">Filipino (Tagalog)</option>
+                                    <option value="ceb">Cebuano</option>
+                                    <option value="ilo">Ilocano</option>
+                                </select>
+                            </div>
+                            
+                            <div class="preference-item mb-3">
+                                <label class="form-label">Time Zone</label>
+                                <select class="form-select">
+                                    <option value="UTC+8">Philippine Time (UTC+8)</option>
+                                    <option value="UTC+7">Indochina Time (UTC+7)</option>
+                                    <option value="UTC+9">Japan Standard Time (UTC+9)</option>
+                                    <option value="UTC+0">UTC (UTC+0)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="preference-item mb-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="mb-1">Email Notifications</h6>
+                                        <small class="text-muted">Receive updates via email</small>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                                        <label class="form-check-label" for="emailNotifications"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Activity -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="account-card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-history me-2"></i>Recent Activity</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon login">
+                                        <i class="fas fa-sign-in-alt"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h6 class="mb-1">Login from Makati, Metro Manila</h6>
+                                        <small class="text-muted">Today at 9:30 AM</small>
+                                    </div>
+                                    <div class="activity-status">
+                                        <span class="badge bg-success">Successful</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon password">
+                                        <i class="fas fa-key"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h6 class="mb-1">Password changed</h6>
+                                        <small class="text-muted">Yesterday at 2:15 PM</small>
+                                    </div>
+                                    <div class="activity-status">
+                                        <span class="badge bg-info">Updated</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon profile">
+                                        <i class="fas fa-user-edit"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h6 class="mb-1">Profile information updated</h6>
+                                        <small class="text-muted">3 days ago</small>
+                                    </div>
+                                    <div class="activity-status">
+                                        <span class="badge bg-info">Updated</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon login">
+                                        <i class="fas fa-sign-in-alt"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <h6 class="mb-1">Login from Quezon City, Metro Manila</h6>
+                                        <small class="text-muted">1 week ago</small>
+                                    </div>
+                                    <div class="activity-status">
+                                        <span class="badge bg-success">Successful</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html> 

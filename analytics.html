@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Soft UI Admin Dashboard</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="assets/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <i class="fas fa-chart-line"></i>
+                <span class="logo-text">Soft UI</span>
+            </div>
+            <div class="mobile-close d-lg-none">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        
+        <div class="sidebar-menu">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="account.html" class="nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>Your Account</span>
+                        <i class="fas fa-chevron-right ms-auto"></i>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-category">
+                <h6>MODULES</h6>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a href="analytics.html" class="nav-link active">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Analytics</span>
+                            <i class="fas fa-chevron-down ms-auto"></i>
+                        </a>
+                        <ul class="submenu expanded">
+                            <li><a href="analytics.html" class="active">Overview</a></li>
+                            <li><a href="#">Reports</a></li>
+                            <li><a href="#">Insights</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="users.html" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Users</span>
+                            <i class="fas fa-chevron-right ms-auto"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.html" class="nav-link">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                            <i class="fas fa-chevron-right ms-auto"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Reports</span>
+                            <i class="fas fa-chevron-right ms-auto"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-bell"></i>
+                            <span>Notifications</span>
+                            <i class="fas fa-chevron-right ms-auto"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Logout Section -->
+            <div class="sidebar-logout">
+                <a href="index.html" class="nav-link logout-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+            <div class="container-fluid">
+                <div class="navbar-nav me-auto">
+                    <div class="nav-item d-lg-none">
+                        <button class="btn btn-link mobile-sidebar-toggle" type="button">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <div class="nav-item">
+                        <div class="search-container">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search analytics..." class="search-input">
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <div class="mode-toggle">
+                            <i class="fas fa-sun"></i>
+                            <div class="toggle-switch active"></div>
+                            <i class="fas fa-moon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <div class="notification-bell">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <div class="message-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item">
+                        <div class="user-profile">
+                            <div class="user-info">
+                                <span class="user-name">Alex Santos</span>
+                                <span class="user-status">Online</span>
+                            </div>
+                            <div class="user-avatar">
+                                <div class="avatar-placeholder">AS</div>
+                            </div>
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Analytics Content -->
+        <div class="container-fluid py-3">
+            <!-- Page Header -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="page-header">
+                        <h1 class="page-title">
+                            <i class="fas fa-chart-bar me-3"></i>
+                            Analytics Overview
+                        </h1>
+                        <p class="page-subtitle">Comprehensive insights and performance metrics for your business</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Key Performance Indicators -->
+            <div class="row mb-4">
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <div class="metric-card">
+                        <div class="metric-icon revenue">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3 class="metric-value">₱2.4M</h3>
+                            <p class="metric-label">Total Revenue</p>
+                            <div class="metric-trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>18.5%</span>
+                                <small>vs last month</small>
+                            </div>
+                        </div>
+                        <div class="metric-chart">
+                            <canvas id="revenueKPIChart" height="40"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <div class="metric-card">
+                        <div class="metric-icon costs">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3 class="metric-value">12,847</h3>
+                            <p class="metric-label">Active Users</p>
+                            <div class="metric-trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>8.2%</span>
+                                <small>vs last month</small>
+                            </div>
+                        </div>
+                        <div class="metric-chart">
+                            <canvas id="usersKPIChart" height="40"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-md-6 mb-3">
+                    <div class="metric-card">
+                        <div class="metric-icon profits">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3 class="metric-value">₱847K</h3>
+                            <p class="metric-label">Monthly Sales</p>
+                            <div class="metric-trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>12.3%</span>
+                                <small>vs last month</small>
+                            </div>
+                        </div>
+                        <div class="metric-chart">
+                            <canvas id="salesKPIChart" height="40"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="metric-card">
+                        <div class="metric-icon shipments">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <div class="metric-content">
+                            <h3 class="metric-value">₱156K</h3>
+                            <p class="metric-label">Export Value</p>
+                            <div class="metric-trend negative">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>3.1%</span>
+                                <small>vs last month</small>
+                            </div>
+                        </div>
+                        <div class="metric-chart">
+                            <canvas id="exportKPIChart" height="40"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Analytics Charts -->
+            <div class="row mb-4">
+                <!-- Revenue Trend Chart -->
+                <div class="col-lg-8 mb-4">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5><i class="fas fa-chart-line me-2"></i>Revenue Trend Analysis</h5>
+                            <div class="chart-controls">
+                                <select class="form-select form-select-sm">
+                                    <option value="7">Last 7 Days</option>
+                                    <option value="30" selected>Last 30 Days</option>
+                                    <option value="90">Last 3 Months</option>
+                                    <option value="365">Last Year</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-body">
+                            <canvas id="revenueTrendChart" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Regional Performance -->
+                <div class="col-lg-4 mb-4">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5><i class="fas fa-map-marker-alt me-2"></i>Regional Performance</h5>
+                        </div>
+                        <div class="chart-body">
+                            <canvas id="regionalChart" height="300"></canvas>
+                            <div class="chart-legend mt-3">
+                                <div class="legend-item">
+                                    <span class="legend-dot" style="background: #5e72e4;"></span>
+                                    <span>Metro Manila</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-dot" style="background: #f093fb;"></span>
+                                    <span>Cebu</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-dot" style="background: #4facfe;"></span>
+                                    <span>Davao</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-dot" style="background: #43e97b;"></span>
+                                    <span>Others</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Detailed Analytics -->
+            <div class="row mb-4">
+                <!-- User Demographics -->
+                <div class="col-lg-6 mb-4">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5><i class="fas fa-users me-2"></i>User Demographics</h5>
+                            <div class="chart-controls">
+                                <button class="btn btn-sm btn-outline-primary">Export Data</button>
+                            </div>
+                        </div>
+                        <div class="chart-body">
+                            <canvas id="demographicsChart" height="250"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Performance -->
+                <div class="col-lg-6 mb-4">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5><i class="fas fa-box me-2"></i>Top Products by Revenue</h5>
+                            <div class="chart-controls">
+                                <select class="form-select form-select-sm">
+                                    <option value="5">Top 5</option>
+                                    <option value="10" selected>Top 10</option>
+                                    <option value="20">Top 20</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-body">
+                            <canvas id="productsChart" height="250"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Real-time Analytics -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5><i class="fas fa-clock me-2"></i>Real-time Activity Monitor</h5>
+                            <div class="chart-controls">
+                                <span class="badge bg-success">Live</span>
+                                <button class="btn btn-sm btn-outline-secondary ms-2">Refresh</button>
+                            </div>
+                        </div>
+                        <div class="chart-body">
+                            <div class="row">
+                                <div class="col-md-3 text-center mb-3">
+                                    <div class="real-time-metric">
+                                        <h3 class="text-primary">₱24,567</h3>
+                                        <p class="text-muted mb-0">Revenue Today</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 text-center mb-3">
+                                    <div class="real-time-metric">
+                                        <h3 class="text-success">847</h3>
+                                        <p class="text-muted mb-0">Orders Today</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 text-center mb-3">
+                                    <div class="real-time-metric">
+                                        <h3 class="text-info">156</h3>
+                                        <p class="text-muted mb-0">New Users</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 text-center mb-3">
+                                    <div class="real-time-metric">
+                                        <h3 class="text-warning">₱12.4K</h3>
+                                        <p class="text-muted mb-0">Avg Order Value</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <canvas id="realtimeChart" height="200"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Analytics Insights -->
+            <div class="row">
+                <div class="col-lg-8 mb-4">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5><i class="fas fa-lightbulb me-2"></i>Key Insights & Recommendations</h5>
+                        </div>
+                        <div class="chart-body">
+                            <div class="insights-list">
+                                <div class="insight-item">
+                                    <div class="insight-icon positive">
+                                        <i class="fas fa-arrow-up"></i>
+                                    </div>
+                                    <div class="insight-content">
+                                        <h6>Revenue Growth Opportunity</h6>
+                                        <p>Metro Manila region shows 23% higher conversion rates. Consider increasing marketing spend in this area.</p>
+                                        <small class="text-muted">Last updated: 2 hours ago</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="insight-item">
+                                    <div class="insight-icon warning">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="insight-content">
+                                        <h6>Cart Abandonment Alert</h6>
+                                        <p>Cart abandonment rate increased by 8% this week. Review checkout process and implement recovery strategies.</p>
+                                        <small class="text-muted">Last updated: 4 hours ago</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="insight-item">
+                                    <div class="insight-icon info">
+                                        <i class="fas fa-info-circle"></i>
+                                    </div>
+                                    <div class="insight-content">
+                                        <h6>Peak Hours Identified</h6>
+                                        <p>Peak shopping hours are 7-9 PM Philippine Time. Consider scheduling promotions during these hours.</p>
+                                        <small class="text-muted">Last updated: 6 hours ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h5><i class="fas fa-trending-up me-2"></i>Quick Actions</h5>
+                        </div>
+                        <div class="chart-body">
+                            <div class="quick-actions">
+                                <button class="btn btn-primary w-100 mb-2">
+                                    <i class="fas fa-download me-2"></i>Export Report
+                                </button>
+                                <button class="btn btn-outline-primary w-100 mb-2">
+                                    <i class="fas fa-share me-2"></i>Share Analytics
+                                </button>
+                                <button class="btn btn-outline-success w-100 mb-2">
+                                    <i class="fas fa-chart-pie me-2"></i>Create Dashboard
+                                </button>
+                                <button class="btn btn-outline-warning w-100 mb-2">
+                                    <i class="fas fa-bell me-2"></i>Set Alerts
+                                </button>
+                                <button class="btn btn-outline-info w-100">
+                                    <i class="fas fa-cog me-2"></i>Configure
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+    <!-- Analytics JS -->
+    <script src="assets/js/analytics.js"></script>
+</body>
+</html> 
