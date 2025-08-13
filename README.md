@@ -234,7 +234,7 @@ The dashboard includes several animation types:
 
 MIT License
 
-Copyright (c) 2024 Klien Gumapac
+Copyright (c) 2025 Klien Gumapac
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
