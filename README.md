@@ -326,7 +326,7 @@ If you have any questions or need help with the dashboard, please:
 
 - **Author**: Klien Gumapac
 - **GitHub**: [https://github.com/KlienGumapac](https://github.com/KlienGumapac)
-- **License**: MIT License (Very permissive, industry standard)
+- **License**: MIT License
 - **Status**: Perpetually free and open
 - **Version**: 2.1.0
 - **Focus**: Business Solutions
